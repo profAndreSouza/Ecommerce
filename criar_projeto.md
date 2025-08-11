@@ -5,16 +5,7 @@ Este guia mostra como criar, executar e integrar um projeto ASP.NET Core MVC com
 
 ## 1. Criar o Projeto MVC
 
-Para criar um projeto ASP.NET Core MVC com a estrutura básica (controllers, views, modelos), execute:
-
-```bash
-dotnet new mvc -n MinhaAppMvc
-cd MinhaAppMvc
-````
-
-Isso criará uma pasta `MinhaAppMvc` com o projeto dentro.
-
-Se quiser criar na pasta atual (sem criar subpasta), rode apenas:
+Para criar um projeto ASP.NET Core MVC com a estrutura básica (controllers, views, modelos) na pasta atual (sem criar subpasta), execute:
 
 ```bash
 dotnet new mvc
