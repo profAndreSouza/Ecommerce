@@ -38,7 +38,7 @@ classDiagram
 
     class Desconto {
         +int id
-        +string tipo       // percentual ou fixo
+        +string tipo
         +decimal valor
         +string descricao
         +decimal aplicar(decimal preco)

@@ -29,7 +29,7 @@ erDiagram
 
     DESCONTO {
         int id
-        string tipo          // "percentual" ou "fixo"
+        string tipo
         decimal valor
         string descricao
     }
