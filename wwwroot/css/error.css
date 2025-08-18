@@ -1,0 +1,57 @@
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background: #f9f9f9;
+    padding: 2rem;
+}
+
+.error-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 3rem;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.error-title {
+    font-size: 2rem;
+    color: #c0392b;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-id {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.btn-error {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: #c0392b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.btn-error:hover {
+    background: #a93226;
+}
+
+.error-dev {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    background: #fdf2f2;
+    border-radius: 8px;
+    text-align: left;
+}

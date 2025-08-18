@@ -2,7 +2,202 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<section class="hero">
+    <div class="container hero-grid">
+    <article class="hero-card hero-main">
+        <div class="content">
+        <div>
+            <h2>Coleção de Inverno 2025</h2>
+            <p>Peças térmicas, casacos oversized e acessórios com até 40% OFF.</p>
+        </div>
+        <button class="cta">Comprar agora
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 5l7 7-7 7" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        </div>
+        <span class="tag">-40%</span>
+    </article>
+    <article class="hero-card hero-side-1">
+        <div class="content">
+        <div>
+            <h2>Tech Essentials</h2>
+            <p>Gadgets e periféricos para seu setup.</p>
+        </div>
+        <button class="cta">Ver ofertas</button>
+        </div>
+    </article>
+    <article class="hero-card hero-side-2">
+        <div class="content">
+        <div>
+            <h2>Casa &amp; Decoração</h2>
+            <p>Minimalista, funcional e aconchegante.</p>
+        </div>
+        <button class="cta">Explorar</button>
+        </div>
+    </article>
+    </div>
+</section>
+
+<div class="container chips">
+    <button class="chip active">Em destaque</button>
+    <button class="chip">Mais vendidos</button>
+    <button class="chip">Lançamentos</button>
+    <button class="chip">Até R$ 199</button>
+    <button class="chip">Sustentáveis</button>
+    <button class="chip">Frete grátis</button>
 </div>
+
+<section class="container">
+    <div class="section-title">
+    <h3>Produtos em destaque</h3>
+    <a href="#">Ver tudo →</a>
+    </div>
+    <div class="grid">
+    <!-- Produto 1 -->
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1526178618403-3e8c6a5701dd?q=80&w=1200&auto=format&fit=crop" alt="Fone de ouvido premium"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Fone Bluetooth Noise‑Cancel</h4>
+        <div class="meta">
+            <span class="price">R$ 699</span>
+            <span class="rating">★★★★★ (128)</span>
+        </div>
+        <div class="actions-row">
+            <button class="btn">Adicionar</button>
+            <button class="btn primary">Comprar</button>
+        </div>
+        </div>
+    </article>
+    <!-- Produto 2 -->
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" alt="Tênis casual"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Tênis Casual Minimal</h4>
+        <div class="meta">
+            <span class="price">R$ 349</span>
+            <span class="rating">★★★★☆ (86)</span>
+        </div>
+        <div class="actions-row">
+            <button class="btn">Adicionar</button>
+            <button class="btn primary">Comprar</button>
+        </div>
+        </div>
+    </article>
+    <!-- Produto 3 -->
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1582582429416-860e372bb1a8?q=80&w=1200&auto=format&fit=crop" alt="Relógio inteligente"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Smartwatch Pro Series</h4>
+        <div class="meta">
+            <span class="price">R$ 999</span>
+            <span class="rating">★★★★☆ (210)</span>
+        </div>
+        <div class="actions-row">
+            <button class="btn">Adicionar</button>
+            <button class="btn primary">Comprar</button>
+        </div>
+        </div>
+    </article>
+    <!-- Produto 4 -->
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop" alt="Jaqueta"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Jaqueta Puffer Térmica</h4>
+        <div class="meta">
+            <span class="price">R$ 559</span>
+            <span class="rating">★★★★★ (64)</span>
+        </div>
+        <div class="actions-row">
+            <button class="btn">Adicionar</button>
+            <button class="btn primary">Comprar</button>
+        </div>
+        </div>
+    </article>
+    </div>
+</section>
+
+<section class="container promo" aria-label="Banner de promoção">
+    <div>
+    <h4>Semana do Cliente — Frete grátis acima de R$ 199</h4>
+    <p>Use o cupom <strong>CLIENTE25</strong> e ganhe 10% OFF extra em itens selecionados.</p>
+    </div>
+    <div class="promo-cta">
+    <button class="btn primary">Aproveitar agora</button>
+    </div>
+</section>
+
+<section class="container">
+    <div class="section-title">
+    <h3>Para a sua casa</h3>
+    <a href="#">Ver tudo →</a>
+    </div>
+    <div class="grid">
+    <!-- Produtos casa (4 itens) -->
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Luminária de mesa"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Luminária Articulada</h4>
+        <div class="meta"><span class="price">R$ 189</span><span class="rating">★★★★☆ (33)</span></div>
+        <div class="actions-row"><button class="btn">Adicionar</button><button class="btn primary">Comprar</button></div>
+        </div>
+    </article>
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1519710881465-4a7f06b2d88d?q=80&w=1200&auto=format&fit=crop" alt="Poltrona"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Poltrona Confort Wave</h4>
+        <div class="meta"><span class="price">R$ 1.299</span><span class="rating">★★★★★ (22)</span></div>
+        <div class="actions-row"><button class="btn">Adicionar</button><button class="btn primary">Comprar</button></div>
+        </div>
+    </article>
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop" alt="Conjunto de almofadas"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Kit Almofadas 4pçs</h4>
+        <div class="meta"><span class="price">R$ 129</span><span class="rating">★★★★☆ (58)</span></div>
+        <div class="actions-row"><button class="btn">Adicionar</button><button class="btn primary">Comprar</button></div>
+        </div>
+    </article>
+    <article class="product">
+        <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1200&auto=format&fit=crop" alt="Relógio de parede"/>
+        <button class="like" aria-label="Adicionar aos favoritos">❤</button>
+        </div>
+        <div class="info">
+        <h4 class="title">Relógio Minimal</h4>
+        <div class="meta"><span class="price">R$ 159</span><span class="rating">★★★☆☆ (12)</span></div>
+        <div class="actions-row"><button class="btn">Adicionar</button><button class="btn primary">Comprar</button></div>
+        </div>
+    </article>
+    </div>
+</section>
+
+<section class="container newsletter" aria-label="Newsletter">
+    <div>
+    <div class="title">Receba ofertas e novidades</div>
+    <div class="muted">Assine nossa newsletter e ganhe 5% OFF na primeira compra.</div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Obrigado por assinar!');">
+    <input type="email" placeholder="Seu e-mail" required />
+    <button class="btn primary" type="submit">Assinar</button>
+    </form>
+</section>

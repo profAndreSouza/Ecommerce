@@ -1,25 +1,60 @@
 ﻿@model ErrorViewModel
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
+
 @{
-    ViewData["Title"] = "Error";
+    ViewData["Title"] = "Erro";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
+@section Styles {
+    <link rel="stylesheet" href="~/css/error.css" />
 }
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+<section class="error-page">
+    <div class="error-container">
+        <h1 class="error-title">⚠ Oops! Algo deu errado.</h1>
+        <p class="error-message">
+            Ocorreu um erro ao processar sua solicitação.
+        </p>
+
+        @if (Model?.ShowRequestId ?? false)
+        {
+            <p class="error-id">
+                <strong>ID da Requisição:</strong> <code>@Model.RequestId</code>
+            </p>
+        }
+
+        <a href="@Url.Action("Index", "Home")" class="btn-error">Voltar para a Página Inicial</a>
+
+        @* Somente em ambiente de desenvolvimento exibimos informações extras *@
+        @if (Env.IsDevelopment())
+        {
+            var exceptionHandlerPathFeature = Context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerPathFeature>();
+
+            <div class="error-dev">
+                <h3>Modo de Desenvolvimento</h3>
+                <p>
+                    Aqui você pode visualizar informações detalhadas sobre o erro ocorrido:
+                </p>
+                
+            
+                @if (exceptionHandlerPathFeature != null)
+                {
+                    <p><strong>Path:</strong> @exceptionHandlerPathFeature.Path</p>
+                    <p><strong>Mensagem:</strong> @exceptionHandlerPathFeature.Error.Message</p>
+                    <p><strong>Tipo:</strong> @exceptionHandlerPathFeature.Error.GetType().FullName</p>
+
+                    <details>
+                        <summary><strong>Stack Trace</strong></summary>
+                        <pre>@exceptionHandlerPathFeature.Error.StackTrace</pre>
+                    </details>
+                }
+                else
+                {
+                    <p>Informações detalhadas do erro não estão disponíveis.</p>
+                }
+
+            </div>
+        }
+
+    </div>
+</section>
