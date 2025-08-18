@@ -147,19 +147,26 @@ Aumentar a presença digital da loja, oferecendo uma plataforma online robusta, 
    dotnet build
    ```
 
-4. Aplicar migrations e atualizar banco:
+4. Adicionar pacotes do Entity Framework:
+   ```bash
+
+   dotnet add package Microsoft.EntityFrameworkCore.Design
+   dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+   ```
+
+5. Aplicar migrations e atualizar banco:
 
    ```bash
    dotnet ef database update
    ```
 
-5. Executar o projeto:
+6. Executar o projeto:
 
    ```bash
    dotnet run
    ```
 
-6. Acessar `https://localhost:5001` no navegador.
+7. Acessar `https://localhost:5001` no navegador.
 
 
 ## 13. Como Contribuir
