@@ -9,7 +9,7 @@ erDiagram
     CATEGORIA {
         int id
         string nome
-        int? categoria_pai_id
+        int categoria_pai_id
     }
 
     PRODUTO {
