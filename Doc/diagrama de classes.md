@@ -12,7 +12,8 @@ classDiagram
     class Categoria {
         +int id
         +string nome
-        +Categoria? categoriaPai
+        +int categoriaPaiId
+        +List<Desconto> descontos
     }
 
     class Produto {
@@ -22,6 +23,8 @@ classDiagram
         +decimal precoBase
         +List<Variacao> variacoes
         +List<Categoria> categorias
+        +List<Desconto> descontos
+        +decimal calcularPreco()
     }
 
     class Variacao {
@@ -29,10 +32,29 @@ classDiagram
         +string nome
         +string valor
         +decimal preco
+        +List<Desconto> descontos
+        +decimal calcularPreco()
     }
 
+    class Desconto {
+        +int id
+        +string tipo       // percentual ou fixo
+        +decimal valor
+        +string descricao
+        +decimal aplicar(decimal preco)
+    }
+
+    %% Relacionamentos
     Categoria "1" <|-- "0..*" Categoria : subcategorias
     Produto "1" --> "0..*" Variacao : possui
     Produto "0..*" --> "0..*" Categoria : classificado_em
+    Produto "0..*" --> "0..*" Desconto : pode_ter
+    Variacao "0..*" --> "0..*" Desconto : pode_ter
+    Categoria "0..*" --> "0..*" Desconto : pode_ter
+
+    note for Categoria "Promoções globais podem ser aplicadas em toda a categoria e impactam seus produtos e variações"
+    note for Produto "calcularPreco(): aplica desconto do produto e da categoria, exceto se a variação tiver desconto próprio"
+    note for Variacao "Desconto da variação tem prioridade sobre os do produto/categoria"
+
 ```
 

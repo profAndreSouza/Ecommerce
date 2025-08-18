@@ -27,13 +27,47 @@ erDiagram
         int produto_id
     }
 
+    DESCONTO {
+        int id
+        string tipo          // "percentual" ou "fixo"
+        decimal valor
+        string descricao
+    }
+
     PRODUTO_CATEGORIA {
         int produto_id
         int categoria_id
     }
 
+    DESCONTO_PRODUTO {
+        int desconto_id
+        int produto_id
+    }
+
+    DESCONTO_VARIACAO {
+        int desconto_id
+        int variacao_id
+    }
+
+    DESCONTO_CATEGORIA {
+        int desconto_id
+        int categoria_id
+    }
+
+    %% Relacionamentos principais
     CATEGORIA ||--o{ CATEGORIA : "subcategorias"
     PRODUTO ||--o{ VARIACAO : "possui"
     PRODUTO ||--o{ PRODUTO_CATEGORIA : "classificado"
     CATEGORIA ||--o{ PRODUTO_CATEGORIA : "contém"
+
+    %% Relacionamentos de descontos
+    PRODUTO ||--o{ DESCONTO_PRODUTO : "pode_ter"
+    DESCONTO ||--o{ DESCONTO_PRODUTO : "aplicado_a"
+
+    VARIACAO ||--o{ DESCONTO_VARIACAO : "pode_ter"
+    DESCONTO ||--o{ DESCONTO_VARIACAO : "aplicado_a"
+
+    CATEGORIA ||--o{ DESCONTO_CATEGORIA : "pode_ter"
+    DESCONTO ||--o{ DESCONTO_CATEGORIA : "aplicado_a"
+
 ```
