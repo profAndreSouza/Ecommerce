@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Painel Admin</title>
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo">🛒</span>
+                <span>E-Shop Admin</span>
+            </div>
+            <nav class="menu">
+                <a asp-controller="Dashboard" asp-action="Index" class="menu-item">📊 Dashboard</a>
+                <a asp-controller="Produtos" asp-action="Index" class="menu-item">📦 Produtos</a>
+                <a asp-controller="Pedidos" asp-action="Index" class="menu-item">🧾 Pedidos</a>
+                <a asp-controller="Clientes" asp-action="Index" class="menu-item">👥 Clientes</a>
+                <a asp-controller="Promocoes" asp-action="Index" class="menu-item">🏷 Promoções</a>
+                <a asp-controller="Relatorios" asp-action="Index" class="menu-item">📈 Relatórios</a>
+                <a asp-controller="Usuarios" asp-action="Index" class="menu-item">⚙ Usuários</a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <div class="main">
+            <header class="topbar">
+                <h1>@ViewData["Title"]</h1>
+                <div class="user">
+                    <span>Administrador</span>
+                    <a asp-controller="Account" asp-action="Logout" class="logout">Sair</a>
+                </div>
+            </header>
+
+            <main class="content">
+                @RenderBody()
+            </main>
+
+            <footer class="footer">
+                <p>© 2025 E-Shop - Painel Administrativo</p>
+            </footer>
+        </div>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
